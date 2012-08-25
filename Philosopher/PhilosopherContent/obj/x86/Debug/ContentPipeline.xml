@@ -7,10 +7,10 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\PhilosopherContent\</RootDirectory>
-      <LoggerRootDirectory>c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\Philosopher\</LoggerRootDirectory>
-      <IntermediateDirectory>c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\PhilosopherContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Six\git\Philosopher\Philosopher\PhilosopherContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Six\git\Philosopher\Philosopher\PhilosopherContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

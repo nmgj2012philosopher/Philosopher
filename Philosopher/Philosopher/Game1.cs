@@ -18,6 +18,7 @@ namespace Philosopher
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        Stack<Screen> screenStack;
 
         public Game1()
         {
@@ -33,7 +34,8 @@ namespace Philosopher
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            screenStack = new Stack<Screen>();
+            screenStack.Push(new SurfaceScreen());
 
             base.Initialize();
         }
@@ -66,11 +68,10 @@ namespace Philosopher
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            screenStack.Peek().Update();
 
             base.Update(gameTime);
         }
@@ -83,7 +84,7 @@ namespace Philosopher
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            screenStack.Peek().Render();
 
             base.Draw(gameTime);
         }
