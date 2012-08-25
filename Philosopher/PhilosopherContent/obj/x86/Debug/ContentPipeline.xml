@@ -91,6 +91,51 @@
       <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Exit.xnb</Output>
       <Time>2012-08-25T12:54:20.6320919-06:00</Time>
     </Item>
+    <Item>
+      <Source>UpLadderExit.png</Source>
+      <Name>UpLadderExit</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadderExit.xnb</Output>
+      <Time>2012-08-25T15:21:21.6537863-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Shaft.png</Source>
+      <Name>Shaft</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Shaft.xnb</Output>
+      <Time>2012-08-25T15:26:32.195767-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Default.spritefont</Source>
+      <Name>Default</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Default.xnb</Output>
+      <Time>2012-08-25T15:50:32.1487729-06:00</Time>
+    </Item>
+    <Item>
+      <Source>UpLadderEntrance.png</Source>
+      <Name>UpLadderEntrance</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadderEntrance.xnb</Output>
+      <Time>2012-08-25T16:03:10.1282525-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Robot.png</Source>
+      <Name>Robot</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Robot.xnb</Output>
+      <Time>2012-08-25T16:17:24.7292151-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

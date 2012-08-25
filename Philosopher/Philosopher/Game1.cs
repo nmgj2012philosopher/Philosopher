@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -23,6 +24,10 @@ namespace Philosopher
         private Stack<Screen> screenStack;
         public Random rand;
         private KeyboardState prevKeyState;
+        private SpriteFont DefaultFont;
+
+        private StringBuilder commandBuilder;
+        private string readyCommand = "";
 
         public void PushScreen(Screen s)
         {
@@ -42,6 +47,7 @@ namespace Philosopher
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
             rand = new Random();
+            commandBuilder = new StringBuilder();
         }
 
         /// <summary>
@@ -75,6 +81,8 @@ namespace Philosopher
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             AssetManager.LoadStaticAssets(this);
+
+            DefaultFont = Content.Load<SpriteFont>("Default");
         }
 
         /// <summary>
@@ -98,6 +106,29 @@ namespace Philosopher
 
             screenStack.Peek().Update(this, prevKeyState);
 
+            for (int i = 0; i < 26; i++)
+            {
+                if (Util.SemiAutoKey((Keys)(Keys.A + i), prevKeyState))
+                    commandBuilder.Append((char)(65 + i));
+            }
+            if (Util.SemiAutoKey(Keys.Enter, prevKeyState))
+            {
+                readyCommand = commandBuilder.ToString();
+                commandBuilder.Clear();
+            }
+            if (Util.SemiAutoKey(Keys.Back, prevKeyState))
+            {
+                if (commandBuilder.Length > 0)
+                    commandBuilder.Remove(commandBuilder.Length - 1, 1);
+            }
+            if(Util.SemiAutoKey(Keys.Space, prevKeyState))
+                commandBuilder.Append(' ');
+
+            if (!readyCommand.Equals(""))
+            {
+
+                readyCommand = "";
+            }
 
             prevKeyState = Keyboard.GetState();
             base.Update(gameTime);
@@ -114,6 +145,8 @@ namespace Philosopher
             spriteBatch.Begin();
 
             screenStack.Peek().Render(this, spriteBatch);
+
+            spriteBatch.DrawString(DefaultFont, "> " + commandBuilder.ToString(), new Vector2(10, SCREENHEIGHT - 30), Color.Lime);
 
             spriteBatch.End();
 

@@ -24,7 +24,11 @@ namespace Philosopher
         Metal,
         OpenGrave,
         UpLadder,
-        DownLadder
+        DownLadder,
+        UpLadderExit,
+        UpLadderEntrance,
+        UpDownLadder,
+        Shaft
     }
     class CaveScreen : Screen
     {
@@ -100,11 +104,17 @@ namespace Philosopher
                                 DrawTile(Asset.CaveEntrance, x, y, sb); break;
                             case CaveTile.Exit:
                                 DrawTile(Asset.CaveExit, x, y, sb); break;
+                            case CaveTile.UpLadderExit:
+                                DrawTile(Asset.UpLadderExitTile, x, y, sb); break;
+                            case CaveTile.UpLadderEntrance:
+                                DrawTile(Asset.UpLadderEntrance, x, y, sb); break;
+                            case CaveTile.Shaft:
+                                DrawTile(Asset.CaveShaft, x, y, sb); break;
                         }
                     }
                 }
-                if (z < MapHeight)
-                    DrawAlphaMask(0x40, sb);
+                if (z < currentHeight)
+                    DrawAlphaMask(0x70, sb);
             }
         }
 
@@ -242,7 +252,7 @@ namespace Philosopher
 
             SetTile(map, currentPoint, CaveTile.Entrance);
 
-            while (pointStack.Count > 0 && !pointStack.Peek().Equals(endPoint))
+            while (!pointStack.Peek().Equals(endPoint))
             {
                 if(!CanMove(map, pointStack.Peek())) pointStack.Pop();
 
@@ -261,7 +271,11 @@ namespace Philosopher
                 {
                     if (dir == Direction.Up)
                     {
-                        SetTile(map, pointStack.Peek(), CaveTile.UpLadder);
+                        if (currentPoint.Equals(pointStack.Peek()))
+                            SetTile(map, currentPoint, CaveTile.UpLadderEntrance);
+                        else
+                            SetTile(map, pointStack.Peek(), CaveTile.UpLadder);
+
                         SetTile(map, AddDirection(pointStack.Peek(), dir), CaveTile.DownLadder);
                     }
                     else if (dir == Direction.Down)
@@ -286,14 +300,40 @@ namespace Philosopher
 
             SetTile(map, endPoint, CaveTile.Exit);
             if (GetTile(map, AddDirection(endPoint, Direction.Up)) == CaveTile.DownLadder)
-                SetTile(map, AddDirection(endPoint, Direction.Up), CaveTile.None);
+                SetTile(map, endPoint, CaveTile.UpLadderExit);
+
+            if (GetTile(map, AddDirection(endPoint, Direction.Up)) == CaveTile.UpLadder)
+            {
+                SetTile(map, AddDirection(endPoint, Direction.Up), CaveTile.UpDownLadder);
+                SetTile(map, endPoint, CaveTile.UpLadderExit);
+            }
+
+            if((currentLevel) % 5 == 0)
+            for (int z = 0; z < MapHeight; z++)
+            {
+                for (int y = 0; y < MapHeight; y++)
+                {
+                    for (int x = 0; x < MapWidth; x++)
+                    {
+                        if (GetTile(map, new Vector3(x, y, z)) == CaveTile.Empty)
+                        {
+                            SetTile(map, new Vector3(x, y, z), CaveTile.Shaft);
+                            return map;
+                        }
+                    }
+                }
+            }
 
             return map;
         }
 
-        private void SaveMap(CaveTile[][][] map)
+        private void SaveMap(CaveTile[][][] map, string filename = "")
         {
-            FileStream fs = new FileStream("Content\\Maps\\cave" + currentLevel + ".map", FileMode.OpenOrCreate);
+            FileStream fs;
+            if (filename == "")
+                fs = new FileStream("Content\\Maps\\cave" + currentLevel + ".map", FileMode.OpenOrCreate);
+            else
+                fs = new FileStream(filename, FileMode.OpenOrCreate);
 
             for (int x = 0; x < map.Length; x++)
             {
@@ -351,13 +391,20 @@ namespace Philosopher
 
         public override void Update(Game1 parent, KeyboardState prevState)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.OemPeriod) &&
-                !prevState.IsKeyDown(Keys.OemPeriod))
+            if (Util.SemiAutoKey(Keys.OemPeriod, prevState))
                 currentHeight += (currentHeight == MapHeight - 1 ? 0 : 1);
             
-            if (Keyboard.GetState().IsKeyDown(Keys.OemComma) &&
-                !prevState.IsKeyDown(Keys.OemComma))
+            if (Util.SemiAutoKey(Keys.OemComma, prevState))
                 currentHeight -= (currentHeight == 0 ? 0 : 1);
+
+            if (Util.SemiAutoKey(Keys.Insert, prevState))
+                SaveMap(map, "Content\\Maps\\DebugMap.map");
+
+            if (Util.SemiAutoKey(Keys.Delete, prevState))
+                map = LoadMap("Content\\Maps\\DebugMap.map");
+
+            if(Util.SemiAutoKey(Keys.Home, prevState))
+                map = GenerateMap();
         }
     }
 }

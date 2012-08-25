@@ -13,6 +13,12 @@ namespace Philosopher
 {
     class Util
     {
+        public static bool SemiAutoKey(Keys key, KeyboardState prevKeys)
+        {
+            return Keyboard.GetState().IsKeyDown(key) &&
+                !prevKeys.IsKeyDown(key);
+        }
+
         public static double Distance(double x1, double y1, double x2, double y2)
         {
             return Math.Sqrt(((x1 - x2) * (x1 - x2)) + ((y1 - y2) * y1 - y2));

@@ -8,3 +8,8 @@ Content\Empty.xnb
 Content\Null.xnb
 Content\Entrance.xnb
 Content\Exit.xnb
+Content\UpLadderExit.xnb
+Content\Shaft.xnb
+Content\Default.xnb
+Content\UpLadderEntrance.xnb
+Content\Robot.xnb

@@ -20,3 +20,8 @@ C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Empty
 C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Null.xnb
 C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Entrance.xnb
 C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Exit.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadderExit.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Shaft.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Default.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadderEntrance.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Robot.xnb

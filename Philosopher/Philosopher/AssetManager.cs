@@ -19,12 +19,16 @@ namespace Philosopher
         EmptyCaveTile,
         UpLadderTile,
         DownLadderTile,
+        UpLadderExitTile,
         CaveEntranceTile,
         CaveExitTile,
         Mask,
         NullCaveTile,
         CaveEntrance,
-        CaveExit
+        CaveExit,
+        CaveShaft,
+        UpLadderEntrance,
+        Robot
     }
 
     class AssetManager
@@ -44,6 +48,10 @@ namespace Philosopher
             Assets.Add(Asset.EmptyCaveTile, parent.Content.Load<Texture2D>("Empty"));
             Assets.Add(Asset.CaveEntrance, parent.Content.Load<Texture2D>("Entrance"));
             Assets.Add(Asset.CaveExit, parent.Content.Load<Texture2D>("Exit"));
+            Assets.Add(Asset.UpLadderExitTile, parent.Content.Load<Texture2D>("UpLadderExit"));
+            Assets.Add(Asset.UpLadderEntrance, parent.Content.Load<Texture2D>("UpLadderEntrance"));
+            Assets.Add(Asset.CaveShaft, parent.Content.Load<Texture2D>("Shaft"));
+            Assets.Add(Asset.Robot, parent.Content.Load<Texture2D>("Robot"));
         }
 
         public static Texture2D GetAsset(Asset a)
