@@ -18,7 +18,19 @@ namespace Philosopher
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Stack<Screen> screenStack;
+        private Stack<Screen> screenStack;
+        public void PushScreen(Screen s)
+        {
+            screenStack.Push(s);
+        }
+        public Screen PeekScreen()
+        {
+            return screenStack.Peek();
+        }
+        public Screen PopScreen()
+        {
+            return screenStack.Pop();
+        }
 
         public Game1()
         {
@@ -36,6 +48,11 @@ namespace Philosopher
         {
             screenStack = new Stack<Screen>();
             screenStack.Push(new SurfaceScreen());
+            screenStack.Push(new SplashScreen());
+
+            graphics.PreferredBackBufferWidth = 1280;
+            graphics.PreferredBackBufferHeight = 720;
+            graphics.ApplyChanges();
 
             base.Initialize();
         }
@@ -49,7 +66,7 @@ namespace Philosopher
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+            AssetManager.LoadStaticAssets(this);
         }
 
         /// <summary>
@@ -71,7 +88,7 @@ namespace Philosopher
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            screenStack.Peek().Update();
+            screenStack.Peek().Update(this);
 
             base.Update(gameTime);
         }
@@ -84,7 +101,11 @@ namespace Philosopher
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            screenStack.Peek().Render();
+            spriteBatch.Begin();
+
+            screenStack.Peek().Render(this, spriteBatch);
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

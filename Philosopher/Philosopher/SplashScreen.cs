@@ -11,16 +11,18 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Philosopher
 {
-    class SurfaceScreen : Screen
+    class SplashScreen : Screen
     {
+
         public override void Update(Game1 parent)
         {
-
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                parent.PopScreen();
         }
 
         public override void Render(Game1 parent, SpriteBatch sb)
         {
-
+            sb.Draw(AssetManager.GetAsset(AssetManager.Asset.SplashScreen), Vector2.Zero, Color.White);
         }
     }
 }
