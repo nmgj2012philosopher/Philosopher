@@ -49,7 +49,7 @@ namespace Philosopher
             else
             {
                 map = GenerateMap();
-                SaveMap(map);
+                //SaveMap(map);
             }
         }
 
@@ -124,7 +124,7 @@ namespace Philosopher
             return tiles;
         }
 
-        private CaveTile GetTile(CaveTile[][][] map, Vector3 pos)
+        public static CaveTile GetTile(CaveTile[][][] map, Vector3 pos)
         {
             try
             {
@@ -136,7 +136,7 @@ namespace Philosopher
             }
         }
 
-        private CaveTile GetTile(CaveTile[][][] map, Vector3 pos, Direction fromPos)
+        public static CaveTile GetTile(CaveTile[][][] map, Vector3 pos, Direction fromPos)
         {
             pos = AddDirection(pos, fromPos);
             try
@@ -190,7 +190,7 @@ namespace Philosopher
             return dirs[parent.rand.Next() % dirs.Count];
         }
 
-        private Vector3 AddDirection(Vector3 pos, Direction dir)
+        public static Vector3 AddDirection(Vector3 pos, Direction dir)
         {
             Vector3 newPos = new Vector3(pos.X, pos.Y, pos.Z);
             switch (dir)
@@ -325,6 +325,28 @@ namespace Philosopher
             }
 
             return map;
+        }
+
+        public static bool CanOccupy(CaveTile[][][] map, Vector3 position)
+        {
+            if (position.Z > 0)
+            {
+                if (GetTile(map, position) == CaveTile.None)
+                {
+                    while (position.Z >= 0)
+                    {
+                        position.Z--;
+                        if (GetTile(map, position) != CaveTile.None)
+                            return true;
+                    }
+                    return false;
+                }
+            }
+
+            if (GetTile(map, position) == CaveTile.None)
+                return false;
+
+            return true;
         }
 
         public override void Update(Game1 parent, KeyboardState prevState)

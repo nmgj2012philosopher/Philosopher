@@ -24,6 +24,7 @@ namespace Philosopher
         }
         public void Update()
         {
+
         }
 
         public void Render()
