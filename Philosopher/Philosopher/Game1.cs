@@ -49,7 +49,7 @@ namespace Philosopher
         protected override void Initialize()
         {
             screenStack = new Stack<Screen>();
-            screenStack.Push(new SurfaceScreen());
+            screenStack.Push(new CaveScreen(this));
             screenStack.Push(new SplashScreen());
 
             graphics.PreferredBackBufferWidth = 1280;

@@ -13,7 +13,8 @@ namespace Philosopher
 {
     public enum CaveTile
     {
-        None,      /*None is different from empty. None means nothing,*/
+        Null,      /*Null means NOT FOUND IN MAP*/
+        None,      /*None is different from empty. None means empty space,*/
         Empty,     /*Empty means no graves.*/
         Entrance,
         Exit,
@@ -42,6 +43,7 @@ namespace Philosopher
 
         public override void Render(Game1 parent, SpriteBatch sb)
         {
+
         }
 
         private CaveTile[][][] MakeNoneMap()
@@ -63,6 +65,19 @@ namespace Philosopher
         private CaveTile GetTile(CaveTile[][][] map, Vector3 pos)
         {
             return map[(int)pos.X][(int)pos.Y][(int)pos.Z];
+        }
+
+        private CaveTile GetTile(CaveTile[][][] map, Vector3 pos, Direction fromPos)
+        {
+            pos = AddDirection(pos, fromPos);
+            try
+            {
+                return map[(int)pos.X][(int)pos.Y][(int)pos.Z];
+            }
+            catch
+            {
+                return CaveTile.Null;
+            }
         }
 
         private void SetTile(CaveTile[][][] map, Vector3 pos, CaveTile tile)
@@ -100,25 +115,51 @@ namespace Philosopher
             return dirs[parent.rand.Next() % dirs.Count];
         }
 
+        private Vector3 AddDirection(Vector3 pos, Direction dir)
+        {
+            Vector3 newPos = new Vector3(pos.X, pos.Y, pos.Z);
+            switch (dir)
+            {
+                case Direction.Up: newPos.Z++; break;
+                case Direction.Down: newPos.Z--; break;
+                case Direction.East: newPos.X++; break;
+                case Direction.West: newPos.X--; break;
+                case Direction.North: newPos.Y--; break;
+                case Direction.South: newPos.Y++; break;
+            }
+            return newPos;
+        }
+
         private CaveTile[][][] GenerateMap()
         {
             CaveTile[][][] map = MakeNoneMap();
 
-            Vector3 currentPoint = new Vector3(currentLevel % 2 == 0 ? MapWidth : 0, 1, 0);
-            Vector3 endPoint = new Vector3(currentLevel % 2 == 0 ? 0 : MapWidth, 1, 0);
-
+            Vector3 currentPoint = new Vector3(currentLevel % 2 == 0 ? MapWidth - 1 : 0, 1, 0);
+            Vector3 endPoint = new Vector3(currentLevel % 2 == 0 ? 0 : MapWidth - 1, 1, 0);
+            int wrongDirs = 0;
             Stack<Vector3> pointStack = new Stack<Vector3>();
             pointStack.Push(currentPoint);
 
             while (pointStack.Count > 0 && !pointStack.Peek().Equals(endPoint))
             {
-                Direction nextDir = FindNextDir(map, pointStack.Peek());
+                Direction dir = FindNextDir(map, pointStack.Peek());
+                while (GetTile(map, pointStack.Peek(), dir) == CaveTile.Null)
+                {
+                    wrongDirs++;
+                    if (wrongDirs > 50) return GenerateMap();
+                    dir = FindNextDir(map, pointStack.Peek());
+                }
+
+                if (dir == Direction.Up) SetTile(map, pointStack.Peek(), CaveTile.UpLadder);
+                else if (dir == Direction.Down) SetTile(map, pointStack.Peek(), CaveTile.DownLadder);
 
                 /*If the tile is not assigned at this point, give it some random graves.*/
-                if (GetTile(map, pointStack.Peek()) == CaveTile.None)
+                else
                 {
                     SetTile(map, pointStack.Peek(), CaveTile.Monster + (parent.rand.Next() % 3));
                 }
+
+                pointStack.Push(AddDirection(pointStack.Peek(), dir));
             }
 
             return map;
