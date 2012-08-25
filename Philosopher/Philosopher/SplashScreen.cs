@@ -14,7 +14,7 @@ namespace Philosopher
     class SplashScreen : Screen
     {
 
-        public override void Update(Game1 parent)
+        public override void Update(Game1 parent, KeyboardState prevState)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 parent.PopScreen();

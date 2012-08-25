@@ -16,10 +16,14 @@ namespace Philosopher
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public const int SCREENWIDTH = 1280;
+        public const int SCREENHEIGHT = 720;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private Stack<Screen> screenStack;
         public Random rand;
+        private KeyboardState prevKeyState;
+
         public void PushScreen(Screen s)
         {
             screenStack.Push(s);
@@ -49,12 +53,14 @@ namespace Philosopher
         protected override void Initialize()
         {
             screenStack = new Stack<Screen>();
-            screenStack.Push(new CaveScreen(this));
+            screenStack.Push(new CaveScreen(this, 0));
             screenStack.Push(new SplashScreen());
 
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
             graphics.ApplyChanges();
+
+            prevKeyState = Keyboard.GetState();
 
             base.Initialize();
         }
@@ -90,8 +96,10 @@ namespace Philosopher
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
-            screenStack.Peek().Update(this);
+            screenStack.Peek().Update(this, prevKeyState);
 
+
+            prevKeyState = Keyboard.GetState();
             base.Update(gameTime);
         }
 
@@ -101,7 +109,7 @@ namespace Philosopher
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             spriteBatch.Begin();
 

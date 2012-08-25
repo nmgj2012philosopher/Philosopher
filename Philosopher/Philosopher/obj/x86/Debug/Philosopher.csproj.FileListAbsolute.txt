@@ -11,3 +11,12 @@ C:\Users\Six\git\Philosopher\Philosopher\Philosopher\obj\x86\Debug\Microsoft.Xna
 C:\Users\Six\git\Philosopher\Philosopher\Philosopher\obj\x86\Debug\Philosopher.exe
 C:\Users\Six\git\Philosopher\Philosopher\Philosopher\obj\x86\Debug\Philosopher.pdb
 C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\splash.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\OpenGraves.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\ClosedGraves.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\mask.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\DownLadder.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadder.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Empty.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Null.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Entrance.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Exit.xnb

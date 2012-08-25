@@ -13,7 +13,7 @@ namespace Philosopher
 {
     class SurfaceScreen : Screen
     {
-        public override void Update(Game1 parent)
+        public override void Update(Game1 parent, KeyboardState prevKeys)
         {
 
         }
