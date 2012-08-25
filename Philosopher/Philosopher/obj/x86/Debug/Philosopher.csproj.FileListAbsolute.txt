@@ -1,0 +1,6 @@
+c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Philosopher.exe
+c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Philosopher.pdb
+c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\Philosopher\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\Philosopher\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\Philosopher\obj\x86\Debug\Philosopher.exe
+c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\Philosopher\obj\x86\Debug\Philosopher.pdb

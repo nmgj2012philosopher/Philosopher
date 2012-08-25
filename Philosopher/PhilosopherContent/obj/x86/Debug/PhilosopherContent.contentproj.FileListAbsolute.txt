@@ -1,0 +1,1 @@
+c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\PhilosopherContent\obj\x86\Debug\ResolveAssemblyReference.cache
