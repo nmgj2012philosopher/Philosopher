@@ -154,7 +154,7 @@ namespace Philosopher
             map[(int)pos.X][(int)pos.Y][(int)pos.Z] = tile;
         }
 
-        private enum Direction
+        public enum Direction
         {
             North,
             East,

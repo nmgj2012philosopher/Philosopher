@@ -116,6 +116,7 @@
     <Compile Include="Screen.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="SurfaceScreen.cs" />
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
