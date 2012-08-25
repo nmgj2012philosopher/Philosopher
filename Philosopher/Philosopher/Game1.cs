@@ -19,6 +19,7 @@ namespace Philosopher
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private Stack<Screen> screenStack;
+        public Random rand;
         public void PushScreen(Screen s)
         {
             screenStack.Push(s);
@@ -36,6 +37,7 @@ namespace Philosopher
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            rand = new Random();
         }
 
         /// <summary>
@@ -85,7 +87,7 @@ namespace Philosopher
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 this.Exit();
 
             screenStack.Peek().Update(this);

@@ -11,18 +11,24 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Philosopher
 {
-    class SplashScreen : Screen
+    class Robot
     {
-
-        public override void Update(Game1 parent)
+        private Vector2 position;
+        /// <summary>
+        /// Creates a new robot. 
+        /// </summary>
+        /// <param name="spawnPos">The position to spawn the robot in.</param>
+        public Robot(Vector2 spawnPos)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-                parent.PopScreen();
+            position = spawnPos;
+        }
+        public void Update()
+        {
         }
 
-        public override void Render(Game1 parent, SpriteBatch sb)
+        public void Render()
         {
-            sb.Draw(AssetManager.GetAsset(Asset.SplashScreen), Vector2.Zero, Color.White);
+
         }
     }
 }

@@ -11,13 +11,20 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Philosopher
 {
+    public enum Asset
+    {
+        SplashScreen,
+        ClosedGraveTile,
+        OpenGraveTile,
+        EmptyCaveTile,
+        UpLadderTile,
+        DownLadderTile,
+        CaveEntranceTile,
+        CaveExitTile
+    }
+
     class AssetManager
     {
-        public enum Asset
-        {
-            SplashScreen
-        }
-
         private static Dictionary<Asset, Texture2D> Assets;
 
         public static void LoadStaticAssets(Game1 parent)
