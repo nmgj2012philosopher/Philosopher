@@ -1,3 +1,4 @@
 c:\users\six\documents\visual studio 2010\Projects\Philosopher\Philosopher\PhilosopherContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Six\git\Philosopher\Philosopher\PhilosopherContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\PhilosopherContent\obj\x86\Debug\PhilosopherContent.contentprojResolveAssemblyReference.cache
+C:\Users\Ryan\Documents\GitHub\Philosopher\Philosopher\PhilosopherContent\obj\x86\Debug\ResolveAssemblyReference.cache

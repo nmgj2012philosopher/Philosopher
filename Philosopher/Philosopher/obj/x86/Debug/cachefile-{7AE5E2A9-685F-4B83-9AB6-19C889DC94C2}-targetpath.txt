@@ -20,3 +20,5 @@ Content\Surface.xnb
 Content\Surface.wma
 Content\Cave.xnb
 Content\Cave.wma
+Content\ThoughtBubble.xnb
+Content\Twitter.xnb

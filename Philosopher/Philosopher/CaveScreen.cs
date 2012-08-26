@@ -504,7 +504,7 @@ namespace Philosopher
             if (Game1.SOUNDS_ENABLED)
             {
                 if (MediaPlayer.State == MediaState.Stopped)
-                    MediaPlayer.Play(AssetManager.GetSongAsset(AssetSong.Cave));
+                 MediaPlayer.Play(AssetManager.GetSongAsset(AssetSong.Cave));
             }
 
             if (Util.SemiAutoKey(Keys.OemPeriod, prevState))

@@ -19,7 +19,7 @@ namespace Philosopher
             if (!firstRun)
             {
                 firstRun = true;
-                if(Game1.SOUNDS_ENABLED)
+                if (Game1.SOUNDS_ENABLED) 
                     MediaPlayer.Play(AssetManager.GetSongAsset(AssetSong.Intro));
             }
             if (Keyboard.GetState().IsKeyDown(Keys.Enter))

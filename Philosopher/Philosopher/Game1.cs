@@ -18,7 +18,7 @@ namespace Philosopher
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
-        public const bool SOUNDS_ENABLED = true;
+        public const bool SOUNDS_ENABLED = false;
         public const int SCREENWIDTH = 1280;
         public const int SCREENHEIGHT = 720;
         GraphicsDeviceManager graphics;
