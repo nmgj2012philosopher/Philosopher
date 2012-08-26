@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\splash.xnb</Output>
-      <Time>2012-08-24T22:00:43.4681662-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\splash.xnb</Output>
+      <Time>2012-08-25T19:14:38.3095052-07:00</Time>
     </Item>
     <Item>
       <Source>OpenGraves.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\OpenGraves.xnb</Output>
-      <Time>2012-08-25T10:50:35.0492593-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\OpenGraves.xnb</Output>
+      <Time>2012-08-25T19:14:38.2665027-07:00</Time>
     </Item>
     <Item>
       <Source>ClosedGraves.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\ClosedGraves.xnb</Output>
-      <Time>2012-08-25T10:52:07.2426286-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\ClosedGraves.xnb</Output>
+      <Time>2012-08-25T19:14:38.236501-07:00</Time>
     </Item>
     <Item>
       <Source>mask.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\mask.xnb</Output>
-      <Time>2012-08-25T11:43:13.3604258-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\mask.xnb</Output>
+      <Time>2012-08-25T19:14:38.2785034-07:00</Time>
     </Item>
     <Item>
       <Source>DownLadder.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\DownLadder.xnb</Output>
-      <Time>2012-08-25T11:53:19.7820105-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\DownLadder.xnb</Output>
+      <Time>2012-08-25T19:14:38.2375011-07:00</Time>
     </Item>
     <Item>
       <Source>UpLadder.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadder.xnb</Output>
-      <Time>2012-08-25T11:53:19.7830105-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadder.xnb</Output>
+      <Time>2012-08-25T19:14:38.2775034-07:00</Time>
     </Item>
     <Item>
       <Source>Empty.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Empty.xnb</Output>
-      <Time>2012-08-25T12:00:58.5247999-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Empty.xnb</Output>
+      <Time>2012-08-25T19:14:38.2385011-07:00</Time>
     </Item>
     <Item>
       <Source>Null.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Null.xnb</Output>
-      <Time>2012-08-25T12:21:59.8552152-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Null.xnb</Output>
+      <Time>2012-08-25T19:14:38.2665027-07:00</Time>
     </Item>
     <Item>
       <Source>Entrance.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Entrance.xnb</Output>
-      <Time>2012-08-25T12:51:31.1097353-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Entrance.xnb</Output>
+      <Time>2012-08-25T19:14:38.2385011-07:00</Time>
     </Item>
     <Item>
       <Source>Exit.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Exit.xnb</Output>
-      <Time>2012-08-25T12:54:20.6320919-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Exit.xnb</Output>
+      <Time>2012-08-25T19:14:38.2395012-07:00</Time>
     </Item>
     <Item>
       <Source>UpLadderExit.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadderExit.xnb</Output>
-      <Time>2012-08-25T15:21:21.6537863-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadderExit.xnb</Output>
+      <Time>2012-08-25T19:14:38.2785034-07:00</Time>
     </Item>
     <Item>
       <Source>Shaft.png</Source>
@@ -106,17 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Shaft.xnb</Output>
-      <Time>2012-08-25T15:26:32.195767-06:00</Time>
-    </Item>
-    <Item>
-      <Source>Default.spritefont</Source>
-      <Name>Default</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Default.xnb</Output>
-      <Time>2012-08-25T15:50:32.1487729-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Shaft.xnb</Output>
+      <Time>2012-08-25T19:14:38.2685029-07:00</Time>
     </Item>
     <Item>
       <Source>UpLadderEntrance.png</Source>
@@ -124,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadderEntrance.xnb</Output>
-      <Time>2012-08-25T16:03:10.1282525-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadderEntrance.xnb</Output>
+      <Time>2012-08-25T19:14:38.2785034-07:00</Time>
     </Item>
     <Item>
       <Source>Robot.png</Source>
@@ -133,8 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Robot.xnb</Output>
-      <Time>2012-08-25T16:17:24.7292151-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Robot.xnb</Output>
+      <Time>2012-08-25T19:14:38.2685029-07:00</Time>
     </Item>
     <Item>
       <Source>UpDownLadder.png</Source>
@@ -142,8 +133,17 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpDownLadder.xnb</Output>
-      <Time>2012-08-25T16:21:10.3150125-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpDownLadder.xnb</Output>
+      <Time>2012-08-25T19:14:38.2775034-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Default.spritefont</Source>
+      <Name>Default</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Default.xnb</Output>
+      <Time>2012-08-25T19:14:38.2375011-07:00</Time>
     </Item>
     <Item>
       <Source>Intro.mp3</Source>
@@ -151,9 +151,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Intro.xnb</Output>
-      <Extra>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Intro.wma</Extra>
-      <Time>2012-08-25T17:13:35.1918338-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Intro.xnb</Output>
+      <Extra>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Intro.wma</Extra>
+      <Time>2012-08-25T19:14:38.2655027-07:00</Time>
     </Item>
     <Item>
       <Source>Surface.mp3</Source>
@@ -161,9 +161,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Surface.xnb</Output>
-      <Extra>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Surface.wma</Extra>
-      <Time>2012-08-25T17:23:59.9498897-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Surface.xnb</Output>
+      <Extra>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Surface.wma</Extra>
+      <Time>2012-08-25T19:14:38.2765033-07:00</Time>
     </Item>
     <Item>
       <Source>Cave.mp3</Source>
@@ -171,9 +171,9 @@
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Cave.xnb</Output>
-      <Extra>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Cave.wma</Extra>
-      <Time>2012-08-25T18:51:20.4695676-06:00</Time>
+      <Output>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Cave.xnb</Output>
+      <Extra>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Cave.wma</Extra>
+      <Time>2012-08-25T19:14:38.235501-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -181,39 +181,39 @@
       <TargetProfile>HiDef</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Six\git\Philosopher\Philosopher\PhilosopherContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Six\git\Philosopher\Philosopher\PhilosopherContent\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\PhilosopherContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\PhilosopherContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\bacpm\Documents\GitHub\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-06:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-06:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-06:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-06:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
-        <Value>2010-08-23T12:41:18-06:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
-        <Value>2010-08-23T12:41:18-06:00</Value>
+        <Key>C:\Program Files\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18-07:00</Value>
       </Assembly>
       <Assembly>
         <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2011-08-18T10:02:27.1899524-06:00</Value>
+        <Value>2012-04-14T12:43:31.8036235-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

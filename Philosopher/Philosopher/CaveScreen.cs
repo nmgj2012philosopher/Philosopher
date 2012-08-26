@@ -31,18 +31,29 @@ namespace Philosopher
         UpDownLadder,
         Shaft
     }
+
+    public enum Direction
+    {
+        North,
+        East,
+        South,
+        West,
+        Up,
+        Down
+    }
     class CaveScreen : Screen
     {
-        private const int MapWidth = 5;
-        private const int MapHeight = 3;
-        private const int MapDepth = 3;
-        private const int TileHeight = 240;
-        private const int TileWidth = 256;
+        public const int MapWidth = 5;
+        public const int MapHeight = 3;
+        public const int MapDepth = 3;
+        public const int TileHeight = 240;
+        public const int TileWidth = 256;
         private int currentLevel = 0;
         private int currentHeight = 0;
         private Game1 parent;
         private CaveTile[][][] map;
         private Robot robot;
+
         public CaveScreen(Game1 parent, int depth)
         {
             this.parent = parent;
@@ -56,6 +67,11 @@ namespace Philosopher
                 map = GenerateMap();
                 SaveMap(map);
             }
+
+            Vector3 currentPoint = new Vector3(currentLevel % 2 == 0 ? MapWidth - 1 : 0, 1, 0);
+            robot = new Robot(new Vector2(currentPoint.X * TileWidth + (TileWidth / 2),
+                currentPoint.Y * TileHeight + (TileHeight / 2)));
+
         }
 
         /// <summary>
@@ -124,7 +140,10 @@ namespace Philosopher
                 }
                 if (z < currentHeight)
                     DrawAlphaMask(0x70, sb);
+
             }
+
+            robot.Render( sb ); 
         }
 
         private CaveTile[][][] MakeNoneMap()
@@ -173,15 +192,6 @@ namespace Philosopher
             map[(int)pos.X][(int)pos.Y][(int)pos.Z] = tile;
         }
 
-        public enum Direction
-        {
-            North,
-            East,
-            South,
-            West,
-            Up,
-            Down
-        }
 
         private Direction FindNextDir(CaveTile[][][] map, Vector3 pos)
         {
@@ -209,20 +219,21 @@ namespace Philosopher
             return dirs[parent.rand.Next() % dirs.Count];
         }
 
-        public static Vector3 AddDirection(Vector3 pos, Direction dir)
+        public static Vector3 AddDirection(Vector3 pos, Direction dir, int distance = 1)
         {
             Vector3 newPos = new Vector3(pos.X, pos.Y, pos.Z);
             switch (dir)
             {
-                case Direction.Up: newPos.Z++; break;
-                case Direction.Down: newPos.Z--; break;
-                case Direction.East: newPos.X++; break;
-                case Direction.West: newPos.X--; break;
-                case Direction.North: newPos.Y--; break;
-                case Direction.South: newPos.Y++; break;
+                case Direction.Up: newPos.Z += distance; break;
+                case Direction.Down: newPos.Z -= distance; break;
+                case Direction.East: newPos.X += distance; break;
+                case Direction.West: newPos.X -= distance; break;
+                case Direction.North: newPos.Y -= distance; break;
+                case Direction.South: newPos.Y += distance; break;
             }
             return newPos;
         }
+
 
         private bool CanMove(CaveTile[][][] map, Vector3 pos)
         {
@@ -394,8 +405,56 @@ namespace Philosopher
         public override void GiveCommand(string command)
         {
             if (command.Equals("delve"))
-                DelveDeeper();
-            //robot.GiveCommand(command);
+            {
+                if (currentHeight == 0)
+                {
+                    if (robot.GetPosition().Y > TileHeight &&
+                        robot.GetPosition().Y < TileHeight * 2)
+                    {
+                        int exitStart = (currentLevel % 2 == 1 ? MapWidth - 1 : 0);
+                        if (robot.GetPosition().X > exitStart &&
+                            robot.GetPosition().X < exitStart + TileWidth)
+                        {
+                            DelveDeeper();
+                        }
+                    }
+                }
+            }
+            switch (command)
+            {
+                case "mv u":
+                case "move u":
+                case "mv up":
+                case "move up": 
+                    currentHeight += (currentHeight == MapHeight - 1 ? 0 : 1);
+                    break;
+
+                case "mv d":
+                case "move d":
+                case "mv down":
+                case "move down":
+                    currentHeight -= (currentHeight == 0 ? 0 : 1);
+                    break;
+
+                case "open grave":
+                case "open graves":
+                    OpenGraves();
+                    break;
+            }
+            robot.GiveCommand(command);
+        }
+
+        private void OpenGraves()
+        {
+            Vector3 truePosition = new Vector3(robot.GetPosition().X / TileWidth,
+                robot.GetPosition().Y / TileHeight, currentHeight);
+            CaveTile onTile = GetTile(map, truePosition);
+            if (onTile >= CaveTile.Monster &&
+                onTile <= CaveTile.Crystal)
+            {
+                SetTile(map, truePosition, CaveTile.OpenGrave);
+            }
+
         }
 
         private CaveTile[][][] LoadMap(string filename)
@@ -462,6 +521,8 @@ namespace Philosopher
 
             if(Util.SemiAutoKey(Keys.Home, prevState))
                 map = GenerateMap();
+
+            robot.Update(map);
         }
     }
 }

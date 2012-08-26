@@ -68,10 +68,13 @@ namespace Philosopher
         /// </summary>
         protected override void Initialize()
         {
+            AssetManager.LoadStaticAssets(this);
+
             screenStack = new Stack<Screen>();
             screenStack.Push(new SurfaceScreen());
             screenStack.Push(new CaveScreen(this, 0));
             screenStack.Push(new SplashScreen());
+
 
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
