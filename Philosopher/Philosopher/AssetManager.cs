@@ -29,7 +29,8 @@ namespace Philosopher
         CaveShaft,
         UpLadderEntrance,
         Robot,
-        UpDownLadder
+        UpDownLadder,
+        ThoughtBubble
     }
 
     public enum AssetSong
@@ -39,10 +40,17 @@ namespace Philosopher
         Cave
     }
 
+    public enum AssetFont
+    {
+        Default,
+        Twitter
+    }
+
     class AssetManager
     {
         private static Dictionary<Asset, Texture2D> Assets;
         private static Dictionary<AssetSong, Song> Songs;
+        private static Dictionary<AssetFont, SpriteFont> Fonts;
 
         public static void LoadStaticAssets(Game1 parent)
         {
@@ -62,11 +70,16 @@ namespace Philosopher
             Assets.Add(Asset.CaveShaft, parent.Content.Load<Texture2D>("Shaft"));
             Assets.Add(Asset.Robot, parent.Content.Load<Texture2D>("Robot"));
             Assets.Add(Asset.UpDownLadder, parent.Content.Load<Texture2D>("UpDownLadder"));
+            Assets.Add(Asset.ThoughtBubble, parent.Content.Load<Texture2D>("ThoughtBubble"));
 
             Songs = new Dictionary<AssetSong, Song>();
             Songs.Add(AssetSong.Intro, parent.Content.Load<Song>("Intro"));
             Songs.Add(AssetSong.Surface, parent.Content.Load<Song>("Surface"));
             Songs.Add(AssetSong.Cave, parent.Content.Load<Song>("Cave"));
+
+            Fonts = new Dictionary<AssetFont, SpriteFont>();
+            Fonts.Add(AssetFont.Default, parent.Content.Load<SpriteFont>("Default"));
+            Fonts.Add(AssetFont.Twitter, parent.Content.Load<SpriteFont>("Twitter"));
         }
 
         public static Texture2D GetAsset(Asset a)
@@ -77,6 +90,11 @@ namespace Philosopher
         public static Song GetSongAsset(AssetSong a)
         {
             return Songs[a];
+        }
+
+        public static SpriteFont GetFontAsset(AssetFont a)
+        {
+            return Fonts[a];
         }
     }
 }
