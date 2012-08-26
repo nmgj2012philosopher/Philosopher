@@ -28,12 +28,21 @@ namespace Philosopher
         CaveExit,
         CaveShaft,
         UpLadderEntrance,
-        Robot
+        Robot,
+        UpDownLadder
+    }
+
+    public enum AssetSong
+    {
+        Intro,
+        Surface,
+        Cave
     }
 
     class AssetManager
     {
         private static Dictionary<Asset, Texture2D> Assets;
+        private static Dictionary<AssetSong, Song> Songs;
 
         public static void LoadStaticAssets(Game1 parent)
         {
@@ -52,11 +61,22 @@ namespace Philosopher
             Assets.Add(Asset.UpLadderEntrance, parent.Content.Load<Texture2D>("UpLadderEntrance"));
             Assets.Add(Asset.CaveShaft, parent.Content.Load<Texture2D>("Shaft"));
             Assets.Add(Asset.Robot, parent.Content.Load<Texture2D>("Robot"));
+            Assets.Add(Asset.UpDownLadder, parent.Content.Load<Texture2D>("UpDownLadder"));
+
+            Songs = new Dictionary<AssetSong, Song>();
+            Songs.Add(AssetSong.Intro, parent.Content.Load<Song>("Intro"));
+            Songs.Add(AssetSong.Surface, parent.Content.Load<Song>("Surface"));
+            Songs.Add(AssetSong.Cave, parent.Content.Load<Song>("Cave"));
         }
 
         public static Texture2D GetAsset(Asset a)
         {
             return Assets[a];
+        }
+
+        public static Song GetSongAsset(AssetSong a)
+        {
+            return Songs[a];
         }
     }
 }

@@ -22,6 +22,7 @@ namespace Philosopher
         Monster,
         Artifact,
         Metal,
+        Crystal,
         OpenGrave,
         UpLadder,
         DownLadder,
@@ -53,7 +54,7 @@ namespace Philosopher
             else
             {
                 map = GenerateMap();
-                //SaveMap(map);
+                SaveMap(map);
             }
         }
 
@@ -76,6 +77,11 @@ namespace Philosopher
                 Color.FromNonPremultiplied(0, 0, 0, alphaLvl));
         }
 
+        private void DelveDeeper()
+        {
+            parent.PushScreen(new CaveScreen(parent, currentLevel + 1));
+        }
+
         public override void Render(Game1 parent, SpriteBatch sb)
         {
             for (int z = 0; z < currentHeight + 1; z++)
@@ -91,6 +97,7 @@ namespace Philosopher
                             case CaveTile.Monster:
                             case CaveTile.Metal:
                             case CaveTile.Artifact:
+                            case CaveTile.Crystal:
                                 DrawTile(Asset.ClosedGraveTile, x, y, sb); break;
                             case CaveTile.UpLadder:
                                 DrawTile(Asset.UpLadderTile, x, y, sb); break;
@@ -108,6 +115,8 @@ namespace Philosopher
                                 DrawTile(Asset.UpLadderExitTile, x, y, sb); break;
                             case CaveTile.UpLadderEntrance:
                                 DrawTile(Asset.UpLadderEntrance, x, y, sb); break;
+                            case CaveTile.UpDownLadder:
+                                DrawTile(Asset.UpDownLadder, x, y, sb); break;
                             case CaveTile.Shaft:
                                 DrawTile(Asset.CaveShaft, x, y, sb); break;
                         }
@@ -271,24 +280,26 @@ namespace Philosopher
                 {
                     if (dir == Direction.Up)
                     {
-                        if (currentPoint.Equals(pointStack.Peek()))
-                            SetTile(map, currentPoint, CaveTile.UpLadderEntrance);
+                        if (GetTile(map, AddDirection(pointStack.Peek(), Direction.Down)) == CaveTile.UpLadder)
+                            SetTile(map, pointStack.Peek(), CaveTile.UpDownLadder);
                         else
                             SetTile(map, pointStack.Peek(), CaveTile.UpLadder);
-
                         SetTile(map, AddDirection(pointStack.Peek(), dir), CaveTile.DownLadder);
                     }
                     else if (dir == Direction.Down)
                     {
-                        SetTile(map, pointStack.Peek(), CaveTile.DownLadder);
+                        if (GetTile(map, AddDirection(pointStack.Peek(), Direction.Up)) == CaveTile.DownLadder)
+                            SetTile(map, pointStack.Peek(), CaveTile.UpDownLadder);
+                        else
+                            SetTile(map, pointStack.Peek(), CaveTile.DownLadder);
                         SetTile(map, AddDirection(pointStack.Peek(), dir), CaveTile.UpLadder);
                     }
 
                     /*If the tile is not assigned at this point, give it some random graves.*/
                     else
                     {
-                        int tileOffset = parent.rand.Next() % 4;
-                        if (tileOffset == 3)
+                        int tileOffset = parent.rand.Next() % 5;
+                        if (tileOffset == 4)
                             SetTile(map, pointStack.Peek(), CaveTile.Empty);
                         else
                             SetTile(map, pointStack.Peek(), CaveTile.Monster + tileOffset);
@@ -299,14 +310,23 @@ namespace Philosopher
             }
 
             SetTile(map, endPoint, CaveTile.Exit);
+            if (GetTile(map, AddDirection(endPoint, Direction.Up)) != CaveTile.None)
+            {
+                SetTile(map, endPoint, CaveTile.UpLadderExit);
+                SetTile(map, AddDirection(endPoint, Direction.Up), CaveTile.UpDownLadder);
+                SetTile(map, AddDirection(AddDirection(endPoint, Direction.Up), Direction.Up), CaveTile.DownLadder);
+            }
             if (GetTile(map, AddDirection(endPoint, Direction.Up)) == CaveTile.DownLadder)
                 SetTile(map, endPoint, CaveTile.UpLadderExit);
 
-            if (GetTile(map, AddDirection(endPoint, Direction.Up)) == CaveTile.UpLadder)
+            if (GetTile(map, AddDirection(currentPoint, Direction.Up)) != CaveTile.None)
             {
-                SetTile(map, AddDirection(endPoint, Direction.Up), CaveTile.UpDownLadder);
-                SetTile(map, endPoint, CaveTile.UpLadderExit);
+                SetTile(map, AddDirection(currentPoint, Direction.Up), CaveTile.UpDownLadder);
+                SetTile(map, currentPoint, CaveTile.UpLadderEntrance);
+                SetTile(map, AddDirection(AddDirection(currentPoint, Direction.Up), Direction.Up), CaveTile.DownLadder);
             }
+
+            map = UpDownAllLadders(map);
 
             if((currentLevel) % 5 == 0)
             for (int z = 0; z < MapHeight; z++)
@@ -320,6 +340,29 @@ namespace Philosopher
                             SetTile(map, new Vector3(x, y, z), CaveTile.Shaft);
                             return map;
                         }
+                    }
+                }
+            }
+
+            return map;
+        }
+
+        private CaveTile[][][] UpDownAllLadders(CaveTile[][][] map)
+        {
+            for (int x = 0; x < MapWidth; x++)
+            {
+                for (int y = 0; y < MapHeight; y++)
+                {
+                    if (GetTile(map, new Vector3(x, y, 1)) == CaveTile.UpLadder)
+                    {
+                        SetTile(map, new Vector3(x, y, 0), CaveTile.UpLadder);
+                        SetTile(map, new Vector3(x, y, 1), CaveTile.UpDownLadder);
+                    }
+
+                    if (GetTile(map, new Vector3(x, y, 0)) == CaveTile.UpLadder)
+                    {
+                        SetTile(map, new Vector3(x, y, 1), CaveTile.UpDownLadder);
+                        SetTile(map, new Vector3(x, y, 2), CaveTile.DownLadder);
                     }
                 }
             }
@@ -348,6 +391,13 @@ namespace Philosopher
             fs.Close();
         }
 
+        public override void GiveCommand(string command)
+        {
+            if (command.Equals("delve"))
+                DelveDeeper();
+            //robot.GiveCommand(command);
+        }
+
         private CaveTile[][][] LoadMap(string filename)
         {
             CaveTile[][][] map = MakeNoneMap();
@@ -363,6 +413,7 @@ namespace Philosopher
                     }
                 }
             }
+            fs.Close();
 
             return map;
         }
@@ -391,6 +442,12 @@ namespace Philosopher
 
         public override void Update(Game1 parent, KeyboardState prevState)
         {
+            if (Game1.SOUNDS_ENABLED)
+            {
+                if (MediaPlayer.State == MediaState.Stopped)
+                    MediaPlayer.Play(AssetManager.GetSongAsset(AssetSong.Cave));
+            }
+
             if (Util.SemiAutoKey(Keys.OemPeriod, prevState))
                 currentHeight += (currentHeight == MapHeight - 1 ? 0 : 1);
             

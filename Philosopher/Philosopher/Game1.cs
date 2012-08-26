@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
@@ -17,6 +18,7 @@ namespace Philosopher
     /// </summary>
     public class Game1 : Microsoft.Xna.Framework.Game
     {
+        public const bool SOUNDS_ENABLED = true;
         public const int SCREENWIDTH = 1280;
         public const int SCREENHEIGHT = 720;
         GraphicsDeviceManager graphics;
@@ -28,6 +30,7 @@ namespace Philosopher
 
         private StringBuilder commandBuilder;
         private string readyCommand = "";
+        private string previousCommand = "";
 
         public void PushScreen(Screen s)
         {
@@ -39,7 +42,13 @@ namespace Philosopher
         }
         public Screen PopScreen()
         {
-            return screenStack.Pop();
+            Screen s = screenStack.Pop();
+            if (screenStack.Peek() is SurfaceScreen)
+            {
+                MediaPlayer.Stop();
+                MediaPlayer.Play(AssetManager.GetSongAsset(AssetSong.Surface));
+            }
+            return s;
         }
 
         public Game1()
@@ -48,6 +57,7 @@ namespace Philosopher
             Content.RootDirectory = "Content";
             rand = new Random();
             commandBuilder = new StringBuilder();
+            MediaPlayer.IsRepeating = true;
         }
 
         /// <summary>
@@ -59,6 +69,7 @@ namespace Philosopher
         protected override void Initialize()
         {
             screenStack = new Stack<Screen>();
+            screenStack.Push(new SurfaceScreen());
             screenStack.Push(new CaveScreen(this, 0));
             screenStack.Push(new SplashScreen());
 
@@ -91,7 +102,9 @@ namespace Philosopher
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            DirectoryInfo dirInfo = new DirectoryInfo("Content\\Maps");
+            foreach (FileInfo f in dirInfo.GetFiles())
+                File.Delete(f.FullName);
         }
 
         /// <summary>
@@ -124,9 +137,19 @@ namespace Philosopher
             if(Util.SemiAutoKey(Keys.Space, prevKeyState))
                 commandBuilder.Append(' ');
 
+            if (Util.SemiAutoKey(Keys.PageDown, prevKeyState))
+                PopScreen();
+
+            if (Util.SemiAutoKey(Keys.Up, prevKeyState))
+            {
+                commandBuilder.Clear();
+                commandBuilder = new StringBuilder(previousCommand);
+            }
+
             if (!readyCommand.Equals(""))
             {
-
+                screenStack.Peek().GiveCommand(readyCommand.ToLower());
+                previousCommand = readyCommand;
                 readyCommand = "";
             }
 

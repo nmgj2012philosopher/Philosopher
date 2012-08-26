@@ -13,16 +13,32 @@ namespace Philosopher
 {
     class SplashScreen : Screen
     {
-
+        private bool firstRun = false;
         public override void Update(Game1 parent, KeyboardState prevState)
         {
+            if (!firstRun)
+            {
+                firstRun = true;
+                if(Game1.SOUNDS_ENABLED)
+                    MediaPlayer.Play(AssetManager.GetSongAsset(AssetSong.Intro));
+            }
             if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+            {
+                if(Game1.SOUNDS_ENABLED)
+                    MediaPlayer.Stop();
+
                 parent.PopScreen();
+            }
         }
 
         public override void Render(Game1 parent, SpriteBatch sb)
         {
             sb.Draw(AssetManager.GetAsset(Asset.SplashScreen), Vector2.Zero, Color.White);
+        }
+
+        public override void GiveCommand(string command)
+        {
+
         }
     }
 }

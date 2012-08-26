@@ -13,3 +13,10 @@ Content\Shaft.xnb
 Content\Default.xnb
 Content\UpLadderEntrance.xnb
 Content\Robot.xnb
+Content\UpDownLadder.xnb
+Content\Intro.xnb
+Content\Intro.wma
+Content\Surface.xnb
+Content\Surface.wma
+Content\Cave.xnb
+Content\Cave.wma

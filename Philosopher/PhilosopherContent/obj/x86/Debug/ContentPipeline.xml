@@ -136,6 +136,45 @@
       <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Robot.xnb</Output>
       <Time>2012-08-25T16:17:24.7292151-06:00</Time>
     </Item>
+    <Item>
+      <Source>UpDownLadder.png</Source>
+      <Name>UpDownLadder</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpDownLadder.xnb</Output>
+      <Time>2012-08-25T16:21:10.3150125-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Intro.mp3</Source>
+      <Name>Intro</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Intro.xnb</Output>
+      <Extra>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Intro.wma</Extra>
+      <Time>2012-08-25T17:13:35.1918338-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Surface.mp3</Source>
+      <Name>Surface</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Surface.xnb</Output>
+      <Extra>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Surface.wma</Extra>
+      <Time>2012-08-25T17:23:59.9498897-06:00</Time>
+    </Item>
+    <Item>
+      <Source>Cave.mp3</Source>
+      <Name>Cave</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Cave.xnb</Output>
+      <Extra>C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Cave.wma</Extra>
+      <Time>2012-08-25T18:51:20.4695676-06:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

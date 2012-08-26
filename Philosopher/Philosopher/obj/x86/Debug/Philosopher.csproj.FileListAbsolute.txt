@@ -25,3 +25,10 @@ C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Shaft
 C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Default.xnb
 C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpLadderEntrance.xnb
 C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Robot.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\UpDownLadder.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Intro.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Intro.wma
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Surface.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Surface.wma
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Cave.xnb
+C:\Users\Six\git\Philosopher\Philosopher\Philosopher\bin\x86\Debug\Content\Cave.wma

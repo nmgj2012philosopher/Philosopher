@@ -16,5 +16,7 @@ namespace Philosopher
         public abstract void Update(Game1 parent, KeyboardState prevState);
 
         public abstract void Render(Game1 parent, SpriteBatch sb);
+
+        public abstract void GiveCommand(string command);
     }
 }
